@@ -651,7 +651,7 @@ app.use((err, req, res, next) => {
 
 if (require.main === module) {
   app.listen(config.port, config.host, () => {
-    console.log(`Trip expenses app running on http://${config.host === '0.0.0.0' ? 'localhost' : config.host}:${config.port}`);
+    console.log(`Bill Gates running on http://${config.host === '0.0.0.0' ? 'localhost' : config.host}:${config.port}`);
   });
 }
 

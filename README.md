@@ -1,6 +1,6 @@
-# مصاريف الرحلة — Trip Expenses
+# Bill Gates 💸
 
-A small, private, Arabic (RTL), mobile-first web app for splitting trip expenses among ~20 friends.
+**مصاريف الرحلة بين الأصدقاء** — a small, private, Arabic (RTL), mobile-first web app for splitting trip expenses among ~20 friends.
 Everyone can **view** people, expenses, balances and settlement status. Only the **admin** (one shared password) can change anything.
 
 - **Stack:** Node.js + Express 5, SQLite (`better-sqlite3`), plain HTML/CSS/JS (no build step).
@@ -14,7 +14,8 @@ Everyone can **view** people, expenses, balances and settlement status. Only the
 Requirements: **Node.js 20.12 or newer** (22 LTS recommended) and npm.
 
 ```bash
-cd splitwise
+git clone https://github.com/wajeehIsattout/bill-gates.git
+cd bill-gates
 npm install
 cp .env.example .env      # then edit .env if needed
 ```
@@ -54,7 +55,7 @@ The app works with **whole numbers only**: any fraction entered is rounded **up*
 
 ```bash
 npm start
-# → Trip expenses app running on http://localhost:4070
+# → Bill Gates running on http://localhost:4070
 ```
 
 Friends open `http://<server-ip>:4070` on their phones. Make sure the port is open in the server's firewall, e.g. `sudo ufw allow 4070/tcp`.
@@ -63,16 +64,16 @@ To keep it running after you log out, use **pm2**:
 
 ```bash
 npm install -g pm2
-pm2 start server.js --name trip
+pm2 start server.js --name bill-gates
 pm2 save && pm2 startup     # restart on reboot
 ```
 
-Or use a systemd unit with `WorkingDirectory=/path/to/splitwise` and `ExecStart=/usr/bin/node server.js`.
+Or use a systemd unit with `WorkingDirectory=/path/to/bill-gates` and `ExecStart=/usr/bin/node server.js`.
 
 ## 5. Changing the admin password
 
 1. Edit `.env` and set `ADMIN_PASSWORD=your-new-password`.
-2. Restart the server (`pm2 restart trip`, or stop and run `npm start` again).
+2. Restart the server (`pm2 restart bill-gates`, or stop and run `npm start` again).
 
 The password is never written to the database or sent to the browser. At startup the server derives a salted scrypt hash in memory and removes the plaintext from `process.env`.
 

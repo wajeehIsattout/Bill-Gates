@@ -1,7 +1,7 @@
 {
-  "name": "trip-expenses",
+  "name": "bill-gates",
   "version": "1.0.0",
-  "description": "Arabic mobile-first trip expense splitter",
+  "description": "Bill Gates — Arabic mobile-first trip expense splitter for friends",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
