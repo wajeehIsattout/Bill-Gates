@@ -1,0 +1,15 @@
+node_modules/
+
+# runtime data — never commit the database, its backups or real secrets
+data/
+backups/
+*.db
+*.db-*
+*.sqlite*
+.env
+.env.*
+!.env.example
+
+# misc
+*.log
+.DS_Store

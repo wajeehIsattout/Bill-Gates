@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#5b42e6">
+  <meta name="referrer" content="no-referrer">
+  <title>مصاريف الرحلة</title>
+  <link rel="preload" href="/fonts/plex-arabic-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/app.css">
+  <script src="/money.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <div>
+          <h1>مصاريف الرحلة <span aria-hidden="true">🌴</span></h1>
+          <p class="hero-sub">حساب مشترك بين الأصدقاء</p>
+        </div>
+      </div>
+      <div class="stats" id="stats" aria-live="polite"></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card admin-card" id="admin" aria-label="دخول المسؤول"></section>
+
+    <nav class="quicknav" aria-label="التنقل">
+      <a href="#people">الأشخاص</a>
+      <a href="#invoices">المصروفات</a>
+      <a href="#summary">الإجمالي</a>
+      <a href="#payments">التسويات</a>
+      <a href="#final">الحساب النهائي</a>
+    </nav>
+
+    <section id="people" class="section" aria-labelledby="people-title">
+      <div class="section-head">
+        <h2 id="people-title">الأشخاص <span class="count" id="people-count"></span></h2>
+        <div class="admin-only" id="people-actions"></div>
+      </div>
+      <div id="people-list" class="people-list"></div>
+    </section>
+
+    <section id="invoices" class="section" aria-labelledby="invoices-title">
+      <div class="section-head">
+        <h2 id="invoices-title">المصروفات <span class="count" id="invoices-count"></span></h2>
+        <div id="invoices-tools"></div>
+      </div>
+      <div id="invoice-list" class="invoice-list"></div>
+    </section>
+
+    <section id="summary" class="section" aria-labelledby="summary-title">
+      <div class="section-head">
+        <h2 id="summary-title">إجمالي الرحلة</h2>
+      </div>
+      <p class="hint">صافي وضع كل شخص في كل المصروفات: <span class="pos-text">الموجب يستلم</span> و<span class="neg-text">السالب يدفع</span>.</p>
+      <div id="summary-list" class="summary-list"></div>
+    </section>
+
+    <section id="payments" class="section" aria-labelledby="payments-title">
+      <div class="section-head">
+        <h2 id="payments-title">الدفع والاستلام</h2>
+      </div>
+      <p class="hint">لكل شخص: كم عليه أن يدفع في كل المصروفات وكم دفع منه، وكم له أن يستلم وكم استلم منه.</p>
+      <div id="payments-list" class="payments-list"></div>
+    </section>
+
+    <section id="final" class="section" aria-labelledby="final-title">
+      <div class="section-head">
+        <h2 id="final-title">الحساب النهائي</h2>
+      </div>
+      <p class="hint">ما سيدفعه أو يستلمه كل شخص في نهاية الرحلة، وكم صرف على نفسه وكم دفع عن الآخرين. المبلغ النهائي يعتمد على المصروفات فقط، وتحته ما تم دفعه أو استلامه منه حتى الآن.</p>
+      <div id="final-list" class="final-list"></div>
+    </section>
+
+    <section id="reset-slot" class="section" aria-label="بدء رحلة جديدة" hidden></section>
+
+    <footer class="page-foot">صُنع للأصدقاء ✦</footer>
+  </main>
+
+  <div id="fab-slot"></div>
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="assertive"></div>
+  <noscript><p class="noscript">هذا التطبيق يحتاج إلى تفعيل JavaScript.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "trip-expenses",
+  "version": "1.0.0",
+  "description": "Arabic mobile-first trip expense splitter",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "backup": "node scripts/backup.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.2.1"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20.12"
+  }
+}
